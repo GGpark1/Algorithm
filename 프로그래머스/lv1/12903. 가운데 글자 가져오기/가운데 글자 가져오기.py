@@ -1,12 +1,10 @@
 def solution(s):
     length = len(s)
-    li = list(s)
     answer = ''
-    mid = length % 2
-    if mid == 0:
-        mid = length // 2
-        answer = answer + li[mid-1] + li[mid]
+    evenOrNot = length % 2
+    mid_idex = length // 2
+    if evenOrNot == 0:
+        answer = answer + s[mid_idex-1] + s[mid_idex]
     else:
-        mid = length // 2
-        answer += li[mid]
+        answer += s[mid_idex]
     return answer
