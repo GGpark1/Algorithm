@@ -1,16 +1,18 @@
-T = int(input())
+for _ in range(int(input())):
 
-for i in range(0, T):
+    stk = []
+    isVPS = True
+    for ch in input():
+        if ch == '(':
+            stk.append(ch)
+        else:
+            if stk:
+                stk.pop()
+            else:
+                isVPS = False
+                break
 
-    t = input()
-    stack = []
-    for j in range(0, len(t)):
-        stack.append(t[j])
-        if stack[0] + stack[-1] == '()':
-            stack.pop(-1)
-            stack.pop(0)
+    if stk:
+        isVPS = False
 
-    if len(stack) == 0:
-        print('YES')
-    else:
-        print('NO')
+    print('YES' if isVPS else 'NO')
