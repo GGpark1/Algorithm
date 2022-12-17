@@ -21,8 +21,6 @@ for coin in coins:
         else:
             count += divide
             K = remain
-    else:
-        continue
 
 
 print(count)
