@@ -1,2 +1,1 @@
-# Leetcode_Algorithm
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+# Leetcode, 백준, 프로그래머스
