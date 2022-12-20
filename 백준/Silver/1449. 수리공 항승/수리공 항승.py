@@ -1,18 +1,18 @@
 N, L = map(int, input().split())
 leak_points = sorted(list(map(int, input().split())))
 
-loc = [False] * 1001
-count = 0
-start = 0
+count = 1
+start = leak_points[0]
+end = start + L
 
-for leak_point in leak_points:
-    loc[leak_point] = True
 
-while start < 1001:
-    if loc[start]:
-        count += 1
-        start += L
+for leak in leak_points[1:]:
+    if leak in range(start, end):
+        continue
+
     else:
-        start += 1
+        start = leak
+        end = start + L
+        count += 1
 
 print(count)
