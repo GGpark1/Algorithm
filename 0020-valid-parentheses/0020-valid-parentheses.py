@@ -1,22 +1,17 @@
 class Solution:
     def isValid(self, s):
         stack = []
-        is_true = False
+        bracket_dic = dict(('()', '{}', '[]'))
 
         for i in s:
             if i in ['(', '{','[']:
                 stack.append(i)
             else:
-                if not stack:
-                    return is_true
+                if not stack or i != bracket_dic[stack[-1]]:
+                    return False
                 else:
-                    if stack[-1] + i in ['()', '{}', '[]']:
-                        stack.pop()
-                    else:
-                        return is_true
-
-        if stack:
-            return False
-        else:
-            is_true = True
-            return is_true
+                    stack.pop()
+        
+        return len(stack) == 0
+                
+        
