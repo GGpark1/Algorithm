@@ -1,16 +1,12 @@
 class Solution:
     def removeDuplicates(self, nums):
-        start = 0
-        end = 0
-        k = 1
-        for i in range(1, len(nums)):
-            end += 1
-            if nums[start] == nums[end]:
-                nums[end] = 101
-            else:
-                start = end
-                k += 1
+        if len(nums) == 0:
+            return 0
 
-        nums.sort()
+        i = 0
+        for j in range(1, len(nums)):
+            if nums[i] != nums[j]:
+                i += 1
+                nums[i] = nums[j]
 
-        return k
+        return i+1
