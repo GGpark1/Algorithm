@@ -1,25 +1,13 @@
 class Solution:
-
-    def __init__(self):
-        self.list = []
-        self.count = 0
-
-    def GetNodeList(self, head):
-        if head:
-            self.list.append(head)
-            self.GetNodeList(head.next)
-        else:
-            return self.list
-
-
     def getIntersectionNode(self, headA, headB):
-        self.GetNodeList(headA)
-        first_set = set(self.list)
+        if headA is None or headB is None:
+            return None
 
-        while headB not in first_set:
-            if headB is None:
-                return None
+        pa = headA
+        pb = headB
 
-            headB = headB.next
+        while pa is not pb:
+            pa = headB if pa is None else pa.next
+            pb = headA if pb is None else pb.next
 
-        return headB
+        return pa
