@@ -1,6 +1,5 @@
 class Solution:
     def majorityElement(self, nums):
-
         count = 0
         major = None
         for num in nums:
