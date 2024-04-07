@@ -6,10 +6,8 @@ screen = turtle.Screen()
 screen.bgcolor("lightblue")
 screen.title("Aquarium")
 
-# 거북이 초기화
 t = turtle.Turtle()
 t.speed(0)
-
 
 # 물고기 그리기 함수, 조건에 따른 색상 변화
 def draw_fish(x, y, size):
@@ -106,6 +104,5 @@ def draw_aquarium():
 
 draw_aquarium()
 
-# 거북이 숨기기 및 완성
 t.hideturtle()
 turtle.done()
